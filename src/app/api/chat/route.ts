@@ -1,5 +1,6 @@
 import { db } from '@/db/db';
-import { openai } from '@ai-sdk/openai';
+// import { openai } from '@ai-sdk/openai';
+import { deepseek } from "@ai-sdk/deepseek";
 import { streamText, UIMessage, convertToModelMessages, tool, stepCountIs } from 'ai';
 import z from 'zod';
 
@@ -25,7 +26,8 @@ Rules:
 Always respond in a helpful, conversational tone while being technically accurate.`;
 
     const result = streamText({
-        model: openai('gpt-5-nano-2025-08-07'),
+        // model: openai('gpt-5-nano-2025-08-07'),
+        model: deepseek("deepseek-v3.1"),
         messages: await convertToModelMessages(messages),
         system: SYSTEM_PROMPT,
         stopWhen: stepCountIs(5),

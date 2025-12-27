@@ -26,7 +26,7 @@ Always respond in a helpful, conversational tone while being technically accurat
 
     const result = streamText({
         model: openai('gpt-5-nano-2025-08-07'),
-        messages: convertToModelMessages(messages),
+        messages: await convertToModelMessages(messages),
         system: SYSTEM_PROMPT,
         stopWhen: stepCountIs(5),
         tools: {

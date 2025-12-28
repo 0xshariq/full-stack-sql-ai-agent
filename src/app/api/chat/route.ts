@@ -29,7 +29,7 @@ Always respond in a helpful, conversational tone while being technically accurat
     const result = streamText({
         // model: openai('gpt-5-nano-2025-08-07'),
         // model: deepseek("deepseek-v3.1"),
-        model: google("gemini-3-flash"),
+        model: google("gemini-2.5-flash"),
         messages: await convertToModelMessages(messages),
         system: SYSTEM_PROMPT,
         stopWhen: stepCountIs(5),
